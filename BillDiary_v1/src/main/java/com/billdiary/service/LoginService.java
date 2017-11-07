@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.billdiary.DAOUtility.Mapper;
 import com.billdiary.dao.LoginDAO;
+import com.billdiary.dao.ProductDAO;
 import com.billdiary.model.User;
 import com.billdiary.model.User1;
 
@@ -17,6 +18,9 @@ public class LoginService {
 	
 	@Autowired
 	public LoginDAO loginDAO;
+	
+	@Autowired
+	public ProductDAO productDAO;
 	
 	public boolean doLogin(User1 user)
 	{
@@ -34,7 +38,8 @@ public class LoginService {
 		}
 		
 		
-		loginDAO.fetchProducts();
+		//ProductDAO d=new ProductDAO();
+		productDAO.fetchProducts();
 		//LOGGER.debug("In method LoginService:doLogin Exit ");
 		return userLogged;
 		

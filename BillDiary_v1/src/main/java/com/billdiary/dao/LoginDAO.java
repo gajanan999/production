@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
+import com.billdiary.entities.Product;
 import com.billdiary.model.User;
 import com.billdiary.utility.Constants;
 
@@ -64,13 +66,7 @@ public class LoginDAO extends AbstractJpaDAO< User >{
 	}
 	
 	
-	public void fetchProducts()
-	{
-		Query q=entityManager.createNativeQuery("select * from product where id=101");
-		Object[] o=(Object[]) q.getSingleResult();
-		System.out.println(o[0]+ " "+ o[1]+ " "+o[2]);
-		
-	}
+	
 	
 	
 }
